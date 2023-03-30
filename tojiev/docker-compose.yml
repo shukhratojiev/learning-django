@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: test
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+volumes:
+  postgres-db:
+
+#  pgadmin:
+#    image: dpage/pgadmin4
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: shukhrat@mail.com
+#      PGADMIN_DEFAULT_PASSWORD: password
+#    ports:
+#      - "5050:80"
+# volume: - ./sql/create-database.sql:/docker-entrypoint-initdb.d/create-database.sql
+
+
